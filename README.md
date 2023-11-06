@@ -22,7 +22,7 @@
 - [3.1 - Overview](#31---overview)
 - [3.2 - Prerequisites](#32---prerequisites)
 - [3.3 - Run the notebook](#33---run-the-notebook)
-- [3.4 - Check data in the database](#)
+- [3.4 - Check data in the database](#34---check-data-in-the-database)
 - [3.5 - Cleanup](#35---cleanup)
 - [3.6 - Additional Information](#36---additional-information)
 
