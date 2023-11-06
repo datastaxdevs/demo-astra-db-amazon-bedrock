@@ -11,7 +11,7 @@
 - [01. Chat Playground](#-1---chat-playground)
 - [02. Prompt Engineering](#-2---prompt-engineering)
 - [03. Text Playground](#-3---text-playground)
-- [04. Example Library](#)
+- [04. Example Library](#-4---examples-library)
 
 [**Part II - Astra DB**](#)
 - [01. Create Astra Account](#-1---create-your-datastax-astra-account)
@@ -31,9 +31,7 @@
 
 <hr>
 
-## HANDS ON
-
-### Amazon Bedrock
+## Amazon Bedrock
 
 Amazon Bedrock is a fully managed, fully serverless service offering access to foundation models from various AI companies in a single API, together with additional capabilities such as facilities for fine-tuning and agent frameworks.
 
@@ -43,13 +41,13 @@ within Bedrock.
 ![](./img/bedrock-00.png)
 
 
-#### ✅ `1` - Chat Playground
+### 1.1 - Chat Playground
 
-- `1a` - Connect to your `AWS Management Consolee` and look for service `Amazon Bedrock`
+- `✅ 1.a` - Connect to your `AWS Management Consolee` and look for service `Amazon Bedrock`
 
 ![](./img/bedrock-01.png)
 
-- **`1b` - On home page select getting started**
+- **`✅ 1.b` - On home page select getting started**
 
 ![](./img/bedrock-02.png)
 
