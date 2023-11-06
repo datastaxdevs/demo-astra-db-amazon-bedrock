@@ -7,25 +7,23 @@
 
 <img src="./img/banner.png" align="right" width="300px"/>
 
-[**Part I - Amazon Bedrock**](#amazon-bedrock)
-- [1.1 Chat Playground](#-1---chat-playground)
-- [1.2 Prompt Engineering](#-2---prompt-engineering)
-- [1.3 Text Playground](#-3---text-playground)
-- [1.4 Example Library](#-4---examples-library)
+[**Part I - Amazon Bedrock**](#1-amazon-bedrock)
+- [1.1 Chat Playground](#11---chat-playground)
+- [1.2 Prompt Engineering](#12---prompt-engineering)
+- [1.3 Text Playground](#13---text-playground)
+- [1.4 Example Library](#14---examples-library)
 
-[**Part II - Astra DB**](#)
-- [2.1 Create Astra Account](#-1---create-your-datastax-astra-account)
-- [2.2 Create Astra Token](#-2---create-an-astra-token)
-- [2.3 Copy the token](#-3---copy-the-token-value-in-your-clipboard)
-- [2.4 Create Database](#-6---create-destination-database-and-a-keyspace)
-- [2.5 Setup env variables](#-7---setup-env-variables)
+[**Part II - Astra DB**](#2-astradb)
+- [2.1 Create Astra Account](#21---create-your-datastax-astra-account)
+- [2.2 Create a Vector database](#22---create-a-vector-database)
+- [2.3 Create a token](#23---create-an-astra-token)
 
-[**Part II - Retrieval Augmented generation**](#)
-- [3.1 - Overview](#)
-- [3.2 - Prerequisites](#)
-- [3.3 - Run the notebook](#)
-- [3.4 - Cleanup](#)
-- [3.5 - Additional Information](#)
+[**Part II - Retrieval Augmented generation**](#3-retrieval-augmented-generation)
+- [3.1 - Overview](#31---overview)
+- [3.2 - Prerequisites](#32---prerequisites)
+- [3.3 - Run the notebook](#33---run-the-notebook)
+- [3.4 - Cleanup](#34---cleanup)
+- [3.5 - Additional Information](#35---additional-information)
 
 <hr>
 
@@ -277,7 +275,7 @@ The integration example is a Python 3.8+ runnable notebook. The **suggested meth
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_kernel-starting.png" />
 
-### 3.3 - Cleanup
+### 3.4 - Cleanup
 
 During the above steps, some resources are created, which you may want to
 cleanly dispose of after you are done.
