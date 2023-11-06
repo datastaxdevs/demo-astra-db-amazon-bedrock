@@ -7,8 +7,8 @@
 
 <img src="./img/banner.png" align="right" width="300px"/>
 
-[**Part I - Amazon Bedrock**](#)
-- [01. Chat Playground](#)
+[**Part I - Amazon Bedrock**](#amazon-bedrock)
+- [01. Chat Playground](#-1---chat-playground)
 - [02. Prompt Engineering](#)
 - [02. Prompt Templates](#)
 
@@ -22,7 +22,11 @@
 - [07. Setup env variables](#-7---setup-env-variables)
 
 [**Part II - Retrieval Augmented generation**](#)
-
+- [01 - Overview](#)
+- [02 - Prerequisites](#)
+- [03 - Run the notebook](#)
+- [04 - Cleanup](#)
+- [05 - Additional Information](#)
 
 <hr>
 
@@ -30,28 +34,10 @@
 
 ### Amazon Bedrock
 
-Amazon Bedrock is a fully managed, fully serverless service offering access to
-foundation models from various AI companies in a single API, together with
-additional capabilities such as facilities for fine-tuning and agent frameworks.
+Amazon Bedrock is a fully managed, fully serverless service offering access to foundation models from various AI companies in a single API, together with additional capabilities such as facilities for fine-tuning and agent frameworks.
 
-Amazon Bedrock aims at simplifying development, especially for Generative AI,
-while maintaining privacy and security. Experimenting with foundation models
-is easy, and models can be further customized in a privacy-aware fashion
+Amazon Bedrock aims at simplifying development, especially for Generative AI, while maintaining privacy and security. Experimenting with foundation models is easy, and models can be further customized in a privacy-aware fashion
 within Bedrock.
-
-Foundation models from Amazon Bedrock can be easily **integrated with Astra DB**,
-most notably with its Vector capabilities, thereby providing a solid framework for
-developing Generative AI and other ML-centered applications.
-
-In the following example, you will be able to run a standard RAG
-(retrieval-augmented generation) application
-that makes use of AI models from Amazon Bedrock and uses Astra DB as a Vector Store.
-
-The integration is built with the LangChain framework, which conveniently offers
-native support for Amazon Bedrock as well as Astra DB. Using LangChain is a popular
-and well-established choice -- but certainly not the only one. See the references at
-the end of the page for further options.
-
 
 ![](./img/bedrock-00.png)
 
@@ -154,7 +140,19 @@ You can also leave the windo open to copy the value in a second.
 
 ### Retrieval Augmented generation
 
-## Prerequisites
+
+#### ✅ `1` - Overview
+
+In the following example, you will be able to run a standard RAG
+(retrieval-augmented generation) application
+that makes use of AI models from Amazon Bedrock and uses Astra DB as a Vector Store.
+
+The integration is built with the LangChain framework, which conveniently offers
+native support for Amazon Bedrock as well as Astra DB. Using LangChain is a popular
+and well-established choice -- but certainly not the only one. See the references at
+the end of the page for further options.
+
+#### ✅ `2` - Prerequisites
 
 To run the integration demo notebook, you need:
 
@@ -163,7 +161,7 @@ To run the integration demo notebook, you need:
 - An **Astra account** with a **Serverless Cassandra with Vector Search** database. You will need the [Database ID](https://awesome-astra.github.io/docs/pages/astra/faq/#where-should-i-find-a-database-identifier) and an [Access Token](https://awesome-astra.github.io/docs/pages/astra/create-token/) with role "Database Administrator".
 
 
-## Run the example
+#### ✅ `3` - Run the notebook
 
 The integration example is a Python 3.8+ runnable notebook. The **suggested method** is to import
 the notebook in your **Amazon SageMaker Studio** and run it from there on a standardized environment,
@@ -201,7 +199,7 @@ _As a side note, however, the code can be executed on any environment able to ru
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_kernel-starting.png" />
 
-#### Cleanup
+#### ✅ `4` - Cleanup
 
 During the above steps, some resources are created, which you may want to
 cleanly dispose of after you are done.
@@ -211,7 +209,7 @@ select the "Running Terminals and Kernels" view on the left toolbar (see picture
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_cleanup.png" />
 
-## Additional information
+#### ✅ `5` - Additional Information
 
 [More info on Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
 
