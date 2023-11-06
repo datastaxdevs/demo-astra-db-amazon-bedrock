@@ -5,14 +5,15 @@
 
 ## 📋 Table of content
 
-### Generative AI with Amazon BedRock
+<img src="./img/banner.png" align="right" width="400px"/>
+
+### Amazon BedRock
 
 - [01. Chat Playground](#)
-
 - [02. Prompt Engineering](#)
+- [02. Prompt Templates](#)
 
-
-### Setup Astra
+### DataStax Astra DB
 
 - [01. Create Astra Account](#-1---create-your-datastax-astra-account)
 - [02. Create Astra Token](#-2---create-an-astra-token)
@@ -22,11 +23,14 @@
 - [06. Create Database](#-6---create-destination-database-and-a-keyspace)
 - [07. Setup env variables](#-7---setup-env-variables)
 
-
 ### Rag demo with
 
 
-## Generative AI with Amazon Bedrock
+## Amazon Bedrock
+
+In this tutorial we will work with Amazon Bedrock on within the Amazon Management Console 
+
+![](./img/bedrock-00.png)
 
 #### ✅ `1` - Chat Playground
 
@@ -36,13 +40,34 @@
 
 - On home page select getting started
 
-![](./img/bedrock-01.png)
+![](./img/bedrock-02.png)
+
+- In the left hand side menu pick `Chat`
+
+- Select model Provider and model
+
+| Attribute | Value |
+|-----------|-------|
+| Provider  | Anthropic |
+| Model     | Claude V2 |
+
+![](./img/bedrock-03-chat.png)
+
+- In the prompt enter the question
 
 ```console
 human: Explain me what Datastax Astra Vector is
 ```
 
+![](./img/bedrock-04-chat.png)
 
+
+#### ✅ `2` - Prompt Engineering
+
+
+
+
+## AstraDB
 
 
 #### ✅ `1` - Create your DataStax Astra account
@@ -56,6 +81,7 @@ _click the image below or go to [https://astra.datastax./com](bit.ly/3QxhO6t)_
 <img src="https://awesome-astra.github.io/docs/img/astra/astra-signin-github-0.png" />
 </a>
 <br/>
+
 
 
 #### ✅ `2` - Create an Astra Token
