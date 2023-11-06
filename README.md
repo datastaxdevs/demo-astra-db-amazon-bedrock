@@ -22,8 +22,9 @@
 - [3.1 - Overview](#31---overview)
 - [3.2 - Prerequisites](#32---prerequisites)
 - [3.3 - Run the notebook](#33---run-the-notebook)
-- [3.4 - Cleanup](#34---cleanup)
-- [3.5 - Additional Information](#35---additional-information)
+- [3.4 - Check data in the database](#)
+- [3.5 - Cleanup](#35---cleanup)
+- [3.6 - Additional Information](#36---additional-information)
 
 <hr>
 
@@ -245,13 +246,13 @@ To run the integration demo notebook, you need:
 The integration example is a Python 3.8+ runnable notebook. The **suggested method** is to import the notebook in your **Amazon SageMaker Studio** and run it from there on a standardized environment, which also makes the necessary AWS access credentials readily available. _As a side note, however, the code can be executed on any environment able to run Python notebooks._
 
 <p align="center">
-    <a href="https://raw.githubusercontent.com/datastaxdevs/demo-astra-db-amazon-bedrock/notebooks/bedrock.ipynb" target="blank;">
+    <a href="https://github.com/datastaxdevs/demo-astra-db-amazon-bedrock/raw/main/notebooks/bedrock.ipynb" target="blank;">
         <img src="https://awesome-astra.github.io/docs/img/bedrock/download_notebook_button.png"  style="width: 20%;" />
     </a>
 </p>
 
-- `✅ 3.3.a` - Download the notebook from this repository at [this link](https://raw.githubusercontent.com/datastaxdevs/demo-astra-db-amazon-bedrock/notebooks/bedrock.ipynb) and save it to your local computer.
-(You can also view it [on your browser](https://github.com/datastaxdevs/demo-astra-db-amazon-bedrock/notebooks/bedrock.ipynb).)
+- `✅ 3.3.a` - Download the notebook from this repository at [this link](https://github.com/datastaxdevs/demo-astra-db-amazon-bedrock/raw/main/notebooks/bedrock.ipynb) and save it to your local computer.
+(You can also view it [on your browser](https://github.com/datastaxdevs/demo-astra-db-amazon-bedrock/blob/main/notebooks/bedrock.ipynb).)
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_open-sagemaker.png" />
 
@@ -275,7 +276,42 @@ The integration example is a Python 3.8+ runnable notebook. The **suggested meth
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_kernel-starting.png" />
 
-### 3.4 - Cleanup
+```
+who die first romeo or Astra ?
+```
+
+### 3.4 - Check data in the database
+
+```sql
+use default_keyspace;
+describe tables;
+describe table shakespeare_act5;
+```
+
+```sql
+clear
+select count(*) from shakespeare_act5;
+```
+
+```
+select row_id,attributes_blob,body_blob,metadata_s from shakespeare_act5 limit 3;
+```
+
+```
+token@cqlsh:default_keyspace> select row_id,attributes_blob,body_blob,metadata_s from shakespeare_act5 limit 3;
+
+ row_id                           | attributes_blob | body_blob                                                                                 | metadata_s
+----------------------------------+-----------------+-------------------------------------------------------------------------------------------+-------------------------------------------
+ 0c84e06ff2164b81842adb7d16205424 |            null |     Act 5, Scene 3, Line 211 : CAPULET : O heavens! O wife, look how our daughter bleeds! | {'act': '5', 'line': '211', 'scene': '3'}
+ a507b2045dfa44c9868001e2ad70a967 |            null | Act 5, Scene 3, Line 189 : First Watchman : But the true ground of all these piteous woes | {'act': '5', 'line': '189', 'scene': '3'}
+ 63bf492797a745daa18a06d9c7de9de3 |            null |                 Act 5, Scene 3, Line 65 : ROMEO : For I come hither arm'd against myself: |  {'act': '5', 'line': '65', 'scene': '3'}
+
+(3 rows)
+token@cqlsh:default_keyspace> 
+```
+
+
+### 3.5 - Cleanup
 
 During the above steps, some resources are created, which you may want to
 cleanly dispose of after you are done.
@@ -285,7 +321,7 @@ select the "Running Terminals and Kernels" view on the left toolbar (see picture
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_cleanup.png" />
 
-### 3.5 - Additional Information
+### 3.6 - Additional Information
 
 [More info on Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
 
