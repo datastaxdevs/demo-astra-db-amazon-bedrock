@@ -8,30 +8,28 @@
 <img src="./img/banner.png" align="right" width="300px"/>
 
 [**Part I - Amazon Bedrock**](#amazon-bedrock)
-- [01. Chat Playground](#-1---chat-playground)
-- [02. Prompt Engineering](#-2---prompt-engineering)
-- [03. Text Playground](#-3---text-playground)
-- [04. Example Library](#-4---examples-library)
+- [1.1 Chat Playground](#-1---chat-playground)
+- [1.2 Prompt Engineering](#-2---prompt-engineering)
+- [1.3 Text Playground](#-3---text-playground)
+- [1.4 Example Library](#-4---examples-library)
 
 [**Part II - Astra DB**](#)
-- [01. Create Astra Account](#-1---create-your-datastax-astra-account)
-- [02. Create Astra Token](#-2---create-an-astra-token)
-- [03. Copy the token](#-3---copy-the-token-value-in-your-clipboard)
-- [04. Open Gitpod](#-4---open-gitpod)
-- [05. Setup CLI](#-5---set-up-the-cli-with-your-token)
-- [06. Create Database](#-6---create-destination-database-and-a-keyspace)
-- [07. Setup env variables](#-7---setup-env-variables)
+- [2.1 Create Astra Account](#-1---create-your-datastax-astra-account)
+- [2.2 Create Astra Token](#-2---create-an-astra-token)
+- [2.3 Copy the token](#-3---copy-the-token-value-in-your-clipboard)
+- [2.4 Create Database](#-6---create-destination-database-and-a-keyspace)
+- [2.5 Setup env variables](#-7---setup-env-variables)
 
 [**Part II - Retrieval Augmented generation**](#)
-- [01 - Overview](#)
-- [02 - Prerequisites](#)
-- [03 - Run the notebook](#)
-- [04 - Cleanup](#)
-- [05 - Additional Information](#)
+- [3.1 - Overview](#)
+- [3.2 - Prerequisites](#)
+- [3.3 - Run the notebook](#)
+- [3.4 - Cleanup](#)
+- [3.5 - Additional Information](#)
 
 <hr>
 
-## Amazon Bedrock
+## 1. Amazon Bedrock
 
 Amazon Bedrock is a fully managed, fully serverless service offering access to foundation models from various AI companies in a single API, together with additional capabilities such as facilities for fine-tuning and agent frameworks.
 
@@ -43,23 +41,22 @@ within Bedrock.
 
 ### 1.1 - Chat Playground
 
-- `✅ 1.a` - Connect to your `AWS Management Consolee` and look for service `Amazon Bedrock`
+- `✅ 1.1.a` - Connect to your `AWS Management Consolee` and look for service `Amazon Bedrock`
 
 ![](./img/bedrock-01.png)
 
-- **`✅ 1.b` - On home page select getting started**
+- `✅ 1.1.b` - On home page select getting started
 
 ![](./img/bedrock-02.png)
 
-- `1c` - In the following tutorials we will be using the models `Claude V2` and `Titan`. To see what is available to you and ask for more model access tge `Model Access` item in the menu.
-
+- `✅ 1.1.c` - In the following tutorials we will be using the models `Claude V2` and `Titan`. To see what is available to you and ask for more model access tge `Model Access` item in the menu.
 
 ![](./img/bedrock-models.png)
 
 
-- `1d` - In the left hand side menu pick `Chat`
+- `✅ 1.1.d` - In the left hand side menu pick `Chat`
 
-- `1e` - Select model Provider and model
+- `✅ 1.1.e` - Select model Provider and model
 
 | Attribute | Value |
 |-----------|-------|
@@ -68,7 +65,7 @@ within Bedrock.
 
 ![](./img/bedrock-03-chat.png)
 
-- `1f` - In the prompt enter the question and click `run`
+- `✅ 1.1.f` - In the prompt enter the question and click `run`
 
 ```console
 Explain me what Datastax Astra Vector is
@@ -76,16 +73,16 @@ Explain me what Datastax Astra Vector is
 
 ![](./img/bedrock-04-chat.png)
 
-- `1g` - Above the prompt click `Update inference instruction` to check for a few options
+- `✅ 1.1.g` - Above the prompt click `Update inference instruction` to check for a few options
 
 ![](./img/bedrock-05-chat.png)
 
 
-#### ✅ `2` - Prompt Engineering
+### 1.2 - Prompt Engineering
 
-- `2a` - Start a new chat window with the `Start new chat`
+- `✅ 1.2.a` - Start a new chat window with the `Start new chat`
 
-- `2b` - In the instructions provide the following block (few shot learning)
+- `✅ 1.2.b` - In the instructions provide the following block (few shot learning)
 
 ```
 You are a text analyzer that need to tell me if the sentiment is positive or negative. Here a sample with results.text:I hated this movie
@@ -98,11 +95,11 @@ I will now give you some text and will repeat the process
 
 ![](./img/bedrock-06-few-shot-learning.png)
 
-- `2c` - Validate the instructions and click `run`
+- `✅ 1.2.c` - Validate the instructions and click `run`
 
 ![](./img/bedrock-07-few-shot-learning.png)
 
-- `2d` - Start a a new chat and now try the following (Chain of thought)
+- `✅ 1.2.d` - Start a a new chat and now try the following (Chain of thought)
 
 ```
 When i was 6 my sister was half my age. Now I am 70. How old is my sister ?
@@ -111,8 +108,7 @@ When i was 6 my sister was half my age. Now I am 70. How old is my sister ?
 ![](./img/bedrock-08-reasoning.png)
 
 
-#### ✅ `3` - Text Playground
-
+### 1.3 - Text Playground
 
 > :info: Note: Here's a comparison table that outlines the key differences between a Chat Model and a Language Model in the context of Large Language Models (LLMs):
 >
@@ -131,18 +127,18 @@ When i was 6 my sister was half my age. Now I am 70. How old is my sister ?
 >
 
 
-- `3a` - In the menu pick Playgrounds / Text
+- `✅ 1.3.a` - In the menu pick Playgrounds / Text
 
 ![](./img/bedrock-09-text-playground.png)
 
-- `3b` - Select model Provider and model
+- `✅ 1.3.b` - Select model Provider and model
 
 | Attribute | Value |
 |-----------|-------|
 | Provider  | Anthropic |
 | Model     | Claude V2 |
 
-- `3c` - Enter the code and run
+- `✅ 1.3.c` - Enter the code and run
 
 ```
 Write me a Cassandra CQL Statement to create a table and perform queries by user identifier
@@ -151,33 +147,65 @@ Write me a Cassandra CQL Statement to create a table and perform queries by user
 ![](./img/bedrock-10-text-playground.png)
 
 
-#### ✅ `4` - Examples Library
+### 1.4 - Examples Library
 
-### AstraDB
+- `✅ 1.4.a` - In the menu pick Getting Started / Examples
 
-#### ✅ `1` - Create your DataStax Astra account
+![](./img/bedrock-11-examples.png)
+
+
+- `✅ 1.4.b` - Slect a model using Claude and select open in playground. Run the model.
+
+![](./img/bedrock-12-examples.png)
+
+<hr>
+
+## 2. AstraDB
+
+### 2.1 - Create your DataStax Astra account
 
 > ℹ️ Account creation tutorial is available in [awesome astra](https://awesome-astra.github.io/docs/pages/astra/create-account/)
 
 
-_click the image below or go to [https://astra.datastax./com](bit.ly/3QxhO6t)_
+- `✅ 2.1.a` -  _click the image below or go to [https://astra.datastax./com](bit.ly/3QxhO6t)_
 
 <a href="bit.ly/3QxhO6t">
 <img src="https://awesome-astra.github.io/docs/img/astra/astra-signin-github-0.png" />
 </a>
 <br/>
 
+### 2.2 - Create a Vector Database
+
+- `✅ 2.2.a` - Find the create database button
+
+![](./img/astra-01-create-db.png)
+
+- `✅ 2.2.b` - Populate the create db form
+
+| Attribute | Value |
+|-----------|-------|
+| Database Type  | Vector Database |
+| Database Name  | `db_i_love_ai` |
+| Keyspace Name  | `default_keyspace` |
+| Cloud Provider  | `Amazon` |
+| Region  | `us-east-2` |
+
+- `✅ 2.2.c` - Clock the `[Create Database]` button.
+
+![](./img/astra-02-create-db.png)
 
 
-#### ✅ `2` - Create an Astra Token
+### 2.3 - Create an Astra Token
 
-> ℹ️ Token creation tutorial is available in [awesome astra](https://awesome-astra.github.io/docs/pages/astra/create-token/#c-procedure)
+Wait for for the database to change status from _pending_ to active _active_.
 
-- `Locate `Settings` (#1) in the menu on the left, then `Token Management` (#2)
+- `✅ 2.3.a` - Select the connect TAB and click on Generate token
 
-- Select the role `Organization Administrator` before clicking `[Generate Token]`
+![](./img/astra-03-create-token.png)
 
-![](https://github.com/DataStax-Academy/cassandra-for-data-engineers/blob/main/images/setup-astra-2.png?raw=true)
+- `✅ 2.3.b` - Save the token for later as a json file
+
+![](./img/astra-04-create-token.png)
 
 The Token is in fact three separate strings: a `Client ID`, a `Client Secret` and the `token` proper. You will need some of these strings to access the database, depending on the type of access you plan. Although the Client ID, strictly speaking, is not a secret, you should regard this whole object as a secret and make sure not to share it inadvertently (e.g. committing it to a Git repository) as it grants access to your databases.
 
@@ -189,14 +217,11 @@ The Token is in fact three separate strings: a `Client ID`, a `Client Secret` an
 }
 ```
 
-#### ✅ `3` - Copy the token value in your clipboard
+<hr>
 
-You can also leave the windo open to copy the value in a second.
+## 3. Retrieval Augmented generation
 
-### Retrieval Augmented generation
-
-
-#### ✅ `1` - Overview
+### 3.1 - Overview
 
 In the following example, you will be able to run a standard RAG
 (retrieval-augmented generation) application
@@ -207,54 +232,52 @@ native support for Amazon Bedrock as well as Astra DB. Using LangChain is a popu
 and well-established choice -- but certainly not the only one. See the references at
 the end of the page for further options.
 
-#### ✅ `2` - Prerequisites
+### 3.2 - Prerequisites
 
 To run the integration demo notebook, you need:
 
-- An **Amazon account** with access to Amazon Bedrock and Amazon SageMaker Studio. In particular, you will be asked to provide a set of credentials for programmatic access (i.e. `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN`);
-- Alternatively, if you run the notebook from within SageMaker Studio, it is sufficient to add the Bedrock policy to your SageMaker role instead of explicitly providing the above secrets. Please refer to [this link](https://github.com/aws-samples/amazon-bedrock-workshop#enable-aws-iam-permissions-for-bedrock) for details.
-- An **Astra account** with a **Serverless Cassandra with Vector Search** database. You will need the [Database ID](https://awesome-astra.github.io/docs/pages/astra/faq/#where-should-i-find-a-database-identifier) and an [Access Token](https://awesome-astra.github.io/docs/pages/astra/create-token/) with role "Database Administrator".
+- `✅` An **Amazon account** with access to Amazon Bedrock and Amazon SageMaker Studio. In particular, you will be asked to provide a set of credentials for programmatic access (i.e. `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN`);
 
+- `✅` Alternatively, if you run the notebook from within SageMaker Studio, it is sufficient to add the Bedrock policy to your SageMaker role instead of explicitly providing the above secrets. Please refer to [this link](https://github.com/aws-samples/amazon-bedrock-workshop#enable-aws-iam-permissions-for-bedrock) for details.
 
-#### ✅ `3` - Run the notebook
+- `✅`  An **Astra account** with a **Serverless Cassandra with Vector Search** database. You will need the [Database ID](https://awesome-astra.github.io/docs/pages/astra/faq/#where-should-i-find-a-database-identifier) and an [Access Token](https://awesome-astra.github.io/docs/pages/astra/create-token/) with role "Database Administrator".
 
-The integration example is a Python 3.8+ runnable notebook. The **suggested method** is to import
-the notebook in your **Amazon SageMaker Studio** and run it from there on a standardized environment,
-which also makes the necessary AWS access credentials readily available.
-_As a side note, however, the code can be executed on any environment able to run Python notebooks._
+### 3.3 - Run the notebook
+
+The integration example is a Python 3.8+ runnable notebook. The **suggested method** is to import the notebook in your **Amazon SageMaker Studio** and run it from there on a standardized environment, which also makes the necessary AWS access credentials readily available. _As a side note, however, the code can be executed on any environment able to run Python notebooks._
 
 <p align="center">
-    <a href="https://raw.githubusercontent.com/awesome-astra/docs/main/docs/pages/aiml/aws/notebooks/bedrock.ipynb" target="blank;">
+    <a href="https://raw.githubusercontent.com/datastaxdevs/demo-astra-db-amazon-bedrock/notebooks/bedrock.ipynb" target="blank;">
         <img src="https://awesome-astra.github.io/docs/img/bedrock/download_notebook_button.png"  style="width: 20%;" />
     </a>
 </p>
 
-**Step 1.** Download the notebook from this repository at [this link](https://raw.githubusercontent.com/awesome-astra/docs/main/docs/pages/aiml/aws/notebooks/bedrock.ipynb) and save it to your local computer.
-(You can also view it [on your browser](https://github.com/awesome-astra/docs/blob/main/docs/pages/aiml/aws/notebooks/bedrock.ipynb).)
+- `✅ 3.3.a` - Download the notebook from this repository at [this link](https://raw.githubusercontent.com/datastaxdevs/demo-astra-db-amazon-bedrock/notebooks/bedrock.ipynb) and save it to your local computer.
+(You can also view it [on your browser](https://github.com/datastaxdevs/demo-astra-db-amazon-bedrock/notebooks/bedrock.ipynb).)
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_open-sagemaker.png" />
 
-**Step 2.** Open your Amazon SageMaker console and click the "Studio" item in the left navbar. _Do not choose "Studio Lab", which is a different thing._
+- `✅ 3.3.b` - Open your Amazon SageMaker console and click the "Studio" item in the left navbar. _Do not choose "Studio Lab", which is a different thing._
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_open-studio.png" />
 
-**Step 3.** Click the "Open Studio" button after choosing a user profile: this will bring you to the Studio interface. _You may need to create a Studio instance ("SageMaker domain") if you don't have one already._
+- `✅ 3.3.c` - Click the "Open Studio" button after choosing a user profile: this will bring you to the Studio interface. _You may need to create a Studio instance ("SageMaker domain") if you don't have one already._
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_upload.png" />
 
-**Step 4.** In the left toolbox of Sagemaker Studio, make sure you select the "File Browser" view and locate the "Upload" button: use it to upload the notebook file you previously saved. The notebook will be shown in the file browser.
+- `✅ 3.3.d` - In the left toolbox of Sagemaker Studio, make sure you select the "File Browser" view and locate the "Upload" button: use it to upload the notebook file you previously saved. The notebook will be shown in the file browser.
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_launch-notebook.png" />
 
-**Step 5.** If you double-click on it, the notebook will be opened in Studio. In order to run it, you will be asked to start a "notebook environment" (essentially, a Python runtime). Choose the "Data Science 3.0" image and a "Python 3" kernel and hit "Select".
+- `✅ 3.3.e` - If you double-click on it, the notebook will be opened in Studio. In order to run it, you will be asked to start a "notebook environment" (essentially, a Python runtime). Choose the "Data Science 3.0" image and a "Python 3" kernel and hit "Select".
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_start-environment.png" />
 
-**Step 6.** Once the kernel has fully started, you can run each cell in sequence by clicking on them and pressing Shift+Enter. You will be asked for the secrets during execution.
+- `✅ 3.3.f` - Once the kernel has fully started, you can run each cell in sequence by clicking on them and pressing Shift+Enter. You will be asked for the secrets during execution.
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_kernel-starting.png" />
 
-#### ✅ `4` - Cleanup
+### 3.3 - Cleanup
 
 During the above steps, some resources are created, which you may want to
 cleanly dispose of after you are done.
@@ -264,7 +287,7 @@ select the "Running Terminals and Kernels" view on the left toolbar (see picture
 
 <img src="https://awesome-astra.github.io/docs/img/bedrock/screenshots/bedrock_cleanup.png" />
 
-#### ✅ `5` - Additional Information
+### 3.5 - Additional Information
 
 [More info on Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
 
