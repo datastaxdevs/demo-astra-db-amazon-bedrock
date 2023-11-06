@@ -10,7 +10,8 @@
 [**Part I - Amazon Bedrock**](#amazon-bedrock)
 - [01. Chat Playground](#-1---chat-playground)
 - [02. Prompt Engineering](#)
-- [02. Prompt Templates](#)
+- [03. Text Playground](#)
+- [04. Example Library](#)
 
 [**Part II - Astra DB**](#)
 - [01. Create Astra Account](#-1---create-your-datastax-astra-account)
@@ -42,7 +43,6 @@ within Bedrock.
 ![](./img/bedrock-00.png)
 
 
-
 #### ✅ `1` - Chat Playground
 
 - `1a` - Connect to your `AWS Management Consolee` and look for service `Amazon Bedrock`
@@ -53,9 +53,15 @@ within Bedrock.
 
 ![](./img/bedrock-02.png)
 
-- `1c` - In the left hand side menu pick `Chat`
+- `1c` - In the following tutorials we will be using the models `Claude V2` and `Titan`. To see what is available to you and ask for more model access tge `Model Access` item in the menu.
 
-- `1d` - Select model Provider and model
+
+![](./img/bedrock-models.png)
+
+
+- `1d` - In the left hand side menu pick `Chat`
+
+- `1e` - Select model Provider and model
 
 | Attribute | Value |
 |-----------|-------|
@@ -64,7 +70,7 @@ within Bedrock.
 
 ![](./img/bedrock-03-chat.png)
 
-- `1d` - In the prompt enter the question and click `run`
+- `1f` - In the prompt enter the question and click `run`
 
 ```console
 human: Explain me what Datastax Astra Vector is
@@ -72,7 +78,7 @@ human: Explain me what Datastax Astra Vector is
 
 ![](./img/bedrock-04-chat.png)
 
-- `1e` - Above the prompt click `Update inference instruction` to check for a few options
+- `1g` - Above the prompt click `Update inference instruction` to check for a few options
 
 ![](./img/bedrock-05-chat.png)
 
@@ -94,9 +100,56 @@ I will now give you some text and will repeat the process
 
 ![](./img/bedrock-06-few-shot-learning.png)
 
-- `2c` - Validate the instructions
+- `2c` - Validate the instructions and click `run`
 
 ![](./img/bedrock-07-few-shot-learning.png)
+
+- `2d` - Start a a new chat and now try the following
+
+```
+When i was 6 my sister was half my age. Now I am 70. How old is my sister ?
+```
+
+![](./img/bedrock-08-reasoning.png)
+
+
+#### ✅ `3` - Text Playground
+
+| Feature                | Chat Model                                  | Language Model                             |
+|------------------------|---------------------------------------------|--------------------------------------------|
+| Primary Function       | Engage in conversational dialogue           | Generate text based on input               |
+| Interactivity          | High, designed for back-and-forth exchange  | Varies, typically less interactive         |
+| Context Management     | Maintains context over a session            | Limited context retention                  |
+| Output                 | Tailored responses, can handle commands     | Broader text generation                    |
+| Training Objective     | Optimized for chat interaction              | Optimized for a wide range of text tasks   |
+| Use Cases              | Customer service, virtual assistants, etc.  | Content creation, summarization, etc.      |
+| Personalization        | Can adapt to user's style and preferences   | Less personalization                       |
+| Continuity             | Can reference previous dialogue             | May not reference earlier content as well  |
+| Response Length        | Typically shorter, conversational           | Can be longer and more detailed            |
+| Real-time Adaptation   | Can adjust to new topics in real-time       | Follows the prompt, less adaptive          |
+
+
+- `3a` - In the menu pick Playgrounds / Text
+
+![](./img/bedrock-09-text-playground.png)
+
+- `3b` - Select model Provider and model
+
+| Attribute | Value |
+|-----------|-------|
+| Provider  | Anthropic |
+| Model     | Claude V2 |
+
+- `3c` - Enter the code and run
+
+```
+Write me a Cassandra CQL Statement to create a table and perform queries by user identifier
+```
+
+![](./img/bedrock-10-text-playground.png)
+
+
+#### ✅ `4` - Examples Library
 
 ### AstraDB
 
