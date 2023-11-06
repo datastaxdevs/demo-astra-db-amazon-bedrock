@@ -9,8 +9,8 @@
 
 [**Part I - Amazon Bedrock**](#amazon-bedrock)
 - [01. Chat Playground](#-1---chat-playground)
-- [02. Prompt Engineering](#)
-- [03. Text Playground](#)
+- [02. Prompt Engineering](#-2---prompt-engineering)
+- [03. Text Playground](#-3---text-playground)
 - [04. Example Library](#)
 
 [**Part II - Astra DB**](#)
@@ -49,7 +49,7 @@ within Bedrock.
 
 ![](./img/bedrock-01.png)
 
-- `1b` - On home page select getting started
+- **`1b` - On home page select getting started**
 
 ![](./img/bedrock-02.png)
 
@@ -73,7 +73,7 @@ within Bedrock.
 - `1f` - In the prompt enter the question and click `run`
 
 ```console
-human: Explain me what Datastax Astra Vector is
+Explain me what Datastax Astra Vector is
 ```
 
 ![](./img/bedrock-04-chat.png)
@@ -87,7 +87,7 @@ human: Explain me what Datastax Astra Vector is
 
 - `2a` - Start a new chat window with the `Start new chat`
 
-- `2b` - In the instructions provide the following block
+- `2b` - In the instructions provide the following block (few shot learning)
 
 ```
 You are a text analyzer that need to tell me if the sentiment is positive or negative. Here a sample with results.text:I hated this movie
@@ -104,7 +104,7 @@ I will now give you some text and will repeat the process
 
 ![](./img/bedrock-07-few-shot-learning.png)
 
-- `2d` - Start a a new chat and now try the following
+- `2d` - Start a a new chat and now try the following (Chain of thought)
 
 ```
 When i was 6 my sister was half my age. Now I am 70. How old is my sister ?
@@ -115,18 +115,22 @@ When i was 6 my sister was half my age. Now I am 70. How old is my sister ?
 
 #### ✅ `3` - Text Playground
 
-| Feature                | Chat Model                                  | Language Model                             |
-|------------------------|---------------------------------------------|--------------------------------------------|
-| Primary Function       | Engage in conversational dialogue           | Generate text based on input               |
-| Interactivity          | High, designed for back-and-forth exchange  | Varies, typically less interactive         |
-| Context Management     | Maintains context over a session            | Limited context retention                  |
-| Output                 | Tailored responses, can handle commands     | Broader text generation                    |
-| Training Objective     | Optimized for chat interaction              | Optimized for a wide range of text tasks   |
-| Use Cases              | Customer service, virtual assistants, etc.  | Content creation, summarization, etc.      |
-| Personalization        | Can adapt to user's style and preferences   | Less personalization                       |
-| Continuity             | Can reference previous dialogue             | May not reference earlier content as well  |
-| Response Length        | Typically shorter, conversational           | Can be longer and more detailed            |
-| Real-time Adaptation   | Can adjust to new topics in real-time       | Follows the prompt, less adaptive          |
+
+> :info: Note: Here's a comparison table that outlines the key differences between a Chat Model and a Language Model in the context of Large Language Models (LLMs):
+>
+>| Feature                | Chat Model                                  | Language Model                             |
+>|------------------------|---------------------------------------------|--------------------------------------------|
+>| Primary Function       | Engage in conversational dialogue           | Generate text based on input               |
+>| Interactivity          | High, designed for back-and-forth exchange  | Varies, typically less interactive         |
+>| Context Management     | Maintains context over a session            | Limited context retention                  |
+>| Output                 | Tailored responses, can handle commands     | Broader text generation                    |
+>| Training Objective     | Optimized for chat interaction              | Optimized for a wide range of text tasks   |
+>| Use Cases              | Customer service, virtual assistants, etc.  | Content creation, summarization, etc.      |
+>| Personalization        | Can adapt to user's style and preferences   | Less personalization                       |
+>| Continuity             | Can reference previous dialogue             | May not reference earlier content as well  |
+>| Response Length        | Typically shorter, conversational           | Can be longer and more detailed            |
+>| Real-time Adaptation   | Can adjust to new topics in real-time       | Follows the prompt, less adaptive          |
+>
 
 
 - `3a` - In the menu pick Playgrounds / Text
