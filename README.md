@@ -5,16 +5,14 @@
 
 ## 📋 Table of content
 
-<img src="./img/banner.png" align="right" width="400px"/>
+<img src="./img/banner.png" align="right" width="300px"/>
 
-### Amazon BedRock
-
+[**Part I - Amazon Bedrock**](#)
 - [01. Chat Playground](#)
 - [02. Prompt Engineering](#)
 - [02. Prompt Templates](#)
 
-### DataStax Astra DB
-
+[**Part II - Astra DB**](#)
 - [01. Create Astra Account](#-1---create-your-datastax-astra-account)
 - [02. Create Astra Token](#-2---create-an-astra-token)
 - [03. Copy the token](#-3---copy-the-token-value-in-your-clipboard)
@@ -23,10 +21,14 @@
 - [06. Create Database](#-6---create-destination-database-and-a-keyspace)
 - [07. Setup env variables](#-7---setup-env-variables)
 
-### Rag demo with
+[**Part II - Retrieval Augmented generation**](#)
 
 
-## Amazon Bedrock
+<hr>
+
+## HANDS ON
+
+### Amazon Bedrock
 
 In this tutorial we will work with Amazon Bedrock on within the Amazon Management Console 
 
