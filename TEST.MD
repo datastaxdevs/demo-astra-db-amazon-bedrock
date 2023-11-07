@@ -2,7 +2,7 @@
 
 AstraPy is a Pythonic SDK for [DataStax Astra](https://astra.datastax.com)
 
-[**Part I - Getting Started**](#part-i---getting-started)
+[**Part I - Getting Started**](#part-i-getting-started)
 - [1.1 Install AstraPy](#11-install-astrapy)
 - [1.2 Setup your Astra client](#12-setup-your-astra-client)
 
