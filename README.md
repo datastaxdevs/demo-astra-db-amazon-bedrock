@@ -17,6 +17,7 @@
 - [2.1 Create Astra Account](#21---create-your-datastax-astra-account)
 - [2.2 Create a Vector database](#22---create-a-vector-database)
 - [2.3 Create a token](#23---create-an-astra-token)
+- [2.4 Semantic Search with CQL](#23---create-an-astra-token)
 
 [**Part II - Retrieval Augmented generation**](#3-retrieval-augmented-generation)
 - [3.1 - Overview](#31---overview)
@@ -40,15 +41,15 @@ within Bedrock.
 
 ### 1.1 - Chat Playground
 
-- `✅ 1.1.a` - Connect to your `AWS Management Consolee` and look for service `Amazon Bedrock`
+- `✅ 1.1.a` - Connect to your `AWS Management Console` and look for service `Amazon Bedrock`
 
 ![](./img/bedrock-01.png)
 
-- `✅ 1.1.b` - On home page select getting started
+- `✅ 1.1.b` - On home page select Get started
 
 ![](./img/bedrock-02.png)
 
-- `✅ 1.1.c` - In the following tutorials we will be using the models `Claude V2` and `Titan`. To see what is available to you and ask for more model access tge `Model Access` item in the menu.
+- `✅ 1.1.c` - In the following tutorials we will be using the models `Claude V2` and `Titan`. To see what is available to you and ask for more model access the `Model Access` item in the menu.
 
 ![](./img/bedrock-models.png)
 
@@ -109,7 +110,7 @@ When i was 6 my sister was half my age. Now I am 70. How old is my sister ?
 
 ### 1.3 - Text Playground
 
-> :info: Note: Here's a comparison table that outlines the key differences between a Chat Model and a Language Model in the context of Large Language Models (LLMs):
+>  ℹ️ Note: Here's a comparison table that outlines the key differences between a Chat Model and a Language Model in the context of Large Language Models (LLMs):
 >
 >| Feature                | Chat Model                                  | Language Model                             |
 >|------------------------|---------------------------------------------|--------------------------------------------|
@@ -159,7 +160,7 @@ Write me a Cassandra CQL Statement to create a table and perform queries by user
 
 <hr>
 
-## 2. AstraDB
+## 2. Astra DB through CQL
 
 ### 2.1 - Create your DataStax Astra account
 
@@ -184,12 +185,12 @@ Write me a Cassandra CQL Statement to create a table and perform queries by user
 | Attribute | Value |
 |-----------|-------|
 | Database Type  | Vector Database |
-| Database Name  | `db_i_love_ai` |
+| Database Name  | `db_iloveai` |
 | Keyspace Name  | `default_keyspace` |
 | Cloud Provider  | `Amazon` |
 | Region  | `us-east-2` |
 
-- `✅ 2.2.c` - Clock the `[Create Database]` button.
+- `✅ 2.2.c` - Click the `[Create Database]` button.
 
 ![](./img/astra-02-create-db.png)
 
@@ -199,6 +200,8 @@ Write me a Cassandra CQL Statement to create a table and perform queries by user
 Wait for for the database to change status from _pending_ to active _active_.
 
 - `✅ 2.3.a` - Select the connect TAB and click on Generate token
+
+⚠️ ⚠️ ⚠️ Make sure to select the role `Database Administration`
 
 ![](./img/astra-03-create-token.png)
 
@@ -214,6 +217,75 @@ The Token is in fact three separate strings: a `Client ID`, a `Client Secret` an
   "ClientSecret": "fakedfaked",
   "Token":"AstraCS:fake"
 }
+```
+
+### 2.4 - Semantic Search with CQL
+
+- `✅ 2.4.a` - Locate the tab `CQL Console` and open the CQL Console
+
+![](./img/astra-05-cql-console.png)
+
+
+- `✅ 2.4.b` - Select the keyspace we create `default_keyspace`
+
+```console
+USE default_keyspace;
+```
+
+- `✅ 2.4.c` -  Use this code to create a new table in your keyspace with a five-component vector column.
+
+```sql
+CREATE TABLE IF NOT EXISTS products (
+ id int PRIMARY KEY,
+ name TEXT,
+ description TEXT,
+ item_vector VECTOR<FLOAT, 5>
+);
+```
+
+ - `✅ 2.4.d` - Create the custom index with Storage Attached Indexing (SAI). Creating the index and then loading the data avoids the concurrent building of the index as data loads.
+
+```sql
+CREATE CUSTOM INDEX IF NOT EXISTS ann_index
+ON products(item_vector) USING 'StorageAttachedIndex';
+```
+
+- `✅ 2.4.e` - Insert sample data into the table using the new type.
+
+```sql
+INSERT INTO products (id, name, description, item_vector) VALUES (
+1, //id
+'Coded Cleats', //name
+'ChatGPT integrated sneakers that talk to you', //description
+[0.1, 0.15, 0.3, 0.12, 0.05] //item_vector
+);
+INSERT INTO products (id, name, description, item_vector)
+VALUES (2, 'Logic Layers',
+'An AI quilt to help you sleep forever',
+[0.45, 0.09, 0.01, 0.2, 0.11]);
+INSERT INTO products (id, name, description, item_vector)
+VALUES (5, 'Vision Vector Frame',
+'A deep learning display that controls your mood',
+[0.1, 0.05, 0.08, 0.3, 0.6]);
+```
+
+- `✅ 2.4.f` -  Query vector data with CQL
+
+To query data using Vector Search, use a SELECT query.
+
+```sql
+SELECT * FROM products
+ORDER BY item_vector ANN OF [0.15, 0.1, 0.1, 0.35, 0.55]
+LIMIT 1;
+```
+
+- `✅ 2.4.g` -  **Calculate the similarity**:  Calculate the similarity of the best scoring node in a vector query for ranking, filtering, user feedback, and system optimization in applications where similarity/relevance are crucial. This calculation helps you make informed decisions and enables algorithms to provide more tailored and accurate results.
+
+```sql
+SELECT description, similarity_cosine(item_vector, [0.1, 0.15, 0.3, 0.12, 0.05])
+FROM products
+ORDER BY item_vector ANN OF [0.1, 0.15, 0.3, 0.12, 0.05]
+LIMIT 3;
 ```
 
 <hr>
@@ -282,34 +354,31 @@ who die first romeo or Astra ?
 
 ### 3.4 - Check data in the database
 
+- `✅ 3.4.a` - Locate the tab `CQL Console` again and open the CQL Console
+
+![](./img/astra-05-cql-console.png)
+
+
+- `✅ 3.4.b` - Validate that the database is created 
+
 ```sql
 use default_keyspace;
 describe tables;
 describe table shakespeare_act5;
 ```
 
+- `✅ 3.4.c` - Count records after import
+
 ```sql
 clear
 select count(*) from shakespeare_act5;
 ```
 
+- `✅ 3.4.d` - Show content of the table
+
 ```
 select row_id,attributes_blob,body_blob,metadata_s from shakespeare_act5 limit 3;
 ```
-
-```
-token@cqlsh:default_keyspace> select row_id,attributes_blob,body_blob,metadata_s from shakespeare_act5 limit 3;
-
- row_id                           | attributes_blob | body_blob                                                                                 | metadata_s
-----------------------------------+-----------------+-------------------------------------------------------------------------------------------+-------------------------------------------
- 0c84e06ff2164b81842adb7d16205424 |            null |     Act 5, Scene 3, Line 211 : CAPULET : O heavens! O wife, look how our daughter bleeds! | {'act': '5', 'line': '211', 'scene': '3'}
- a507b2045dfa44c9868001e2ad70a967 |            null | Act 5, Scene 3, Line 189 : First Watchman : But the true ground of all these piteous woes | {'act': '5', 'line': '189', 'scene': '3'}
- 63bf492797a745daa18a06d9c7de9de3 |            null |                 Act 5, Scene 3, Line 65 : ROMEO : For I come hither arm'd against myself: |  {'act': '5', 'line': '65', 'scene': '3'}
-
-(3 rows)
-token@cqlsh:default_keyspace> 
-```
-
 
 ### 3.5 - Cleanup
 
