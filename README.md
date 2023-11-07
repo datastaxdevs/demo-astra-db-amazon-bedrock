@@ -13,11 +13,11 @@
 - [1.3 Text Playground](#13---text-playground)
 - [1.4 Example Library](#14---examples-library)
 
-[**Part II - Astra DB**](#2-astradb)
+[**Part II - Astra DB trough CQL**](#2-astra-db-through-cql)
 - [2.1 Create Astra Account](#21---create-your-datastax-astra-account)
 - [2.2 Create a Vector database](#22---create-a-vector-database)
 - [2.3 Create a token](#23---create-an-astra-token)
-- [2.4 Semantic Search with CQL](#23---create-an-astra-token)
+- [2.4 Semantic Search with CQL](#24---semantic-search-with-cql)
 
 [**Part II - Retrieval Augmented generation**](#3-retrieval-augmented-generation)
 - [3.1 - Overview](#31---overview)
